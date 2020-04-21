@@ -109,8 +109,7 @@ $chat-sub__font-color: #999999;
   &__message-list {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
-    padding-left: 40px;
-    padding-top: 35px;
+    padding: 35px 40px;
     &--box {
       padding-bottom: 46px;
       &--top {
@@ -132,7 +131,7 @@ $chat-sub__font-color: #999999;
       }
     }
   }
-  &__message-form {
+  .form {
     height: 90px;
     background-color: #d2d2d2;
     display: flex;
@@ -148,16 +147,19 @@ $chat-sub__font-color: #999999;
           align-items: center;
           &--message{
             height: 50px;
-            padding-left: 10px;
+            padding:0 40px 0 10px;
             width: calc(100vw - 500px);
             border-style: none;
           }
-          label {
+          &--image{
             margin-right: 10px;
             font-size: 25px;
             position: absolute;
             right: 5px;
             cursor: pointer;
+            &--file {
+              display: none;
+            }
           }
         }
         &--right-content {
