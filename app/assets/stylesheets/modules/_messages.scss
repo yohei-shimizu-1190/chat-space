@@ -41,25 +41,33 @@
             color: #ffffff;
             text-align: left;
           }
+
+
         }
       }
     }
   }
-
   &__group-list {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+<<<<<<< HEAD
     font-weight: bold;
-    padding: 20px;
-    &--group-name {
-      font-size: 15px;
-      margin-bottom: 5px;
-      color: #ffffff;
+    padding: 0 20px;
+    &--box {
+      padding-top: 20px;
+      padding-bottom: 40px;
+      &--group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+        color: #ffffff;
     }
-    &--message {
-      font-size: 11px;
-      color: #ffffff;
+      &--message {
+        font-size: 11px;
+        color: #ffffff;
     }
+   }
+=======
+>>>>>>> parent of a28d913... Implementation up to side-bar(group-list)&chat-main(group-info)
   }
 }
 
@@ -71,6 +79,7 @@
     height: 100px;
     background-color: #ffffff;
     border-bottom: solid #eeeeee;
+<<<<<<< HEAD
     padding-left: 40px;
     padding-right: 40px;
     display: flex;
@@ -97,12 +106,14 @@
       a {
       text-decoration:none;
       color: #38aef0;
-      // // position: absolute;
+      // position: absolute;
       // right: 40px;
       }
     }
 
 
+=======
+>>>>>>> parent of a28d913... Implementation up to side-bar(group-list)&chat-main(group-info)
   }
   &__message-list {
     height: calc(100vh - 100px - 90px);
