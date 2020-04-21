@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
 }
+// サイドバーフォントカラー
+$side-bar__font-color: #ffffff;
+// チャットメインフォントカラー
+$chat-main__font-color: #333333;
+// チャットサブフォントカラー
+$chat-sub__font-color: #999999;
+
+
 
 .side-bar {
   width: 300px;
@@ -21,7 +29,7 @@
       line-height: 20px;
       font-weight: bold;
       &__name {
-        color: #ffffff;
+        color: $side-bar__font-color;
         font-size: 16px;
       }
       &__icons {
@@ -33,7 +41,7 @@
         li {
           margin-left: 5px;
           a {
-            color: #ffffff;
+            color: $side-bar__font-color;
             text-align: left;
           }
         }
@@ -51,11 +59,11 @@
       &--group-name {
         font-size: 15px;
         margin-bottom: 5px;
-        color: #ffffff;
+        color: $side-bar__font-color;
       }
       &--message {
         font-size: 11px;
-        color: #ffffff;
+        color: $side-bar__font-color;
       }
     }
   } 
@@ -73,15 +81,15 @@
     padding-right: 40px;
     display: flex;
     justify-content: space-between;
-    &--left-contents {
+    &--left-content {
       padding-top: 35px;
       &--title {
         font-size: 20px;
-        color: #333333;
+        color: $chat-main__font-color;
         margin-bottom: 15px;
       }
       &--message {
-        color: #999999;
+        color: $chat-sub__font-color;
         font-size: 12px;
       }
     }
@@ -94,8 +102,6 @@
       a {
       text-decoration:none;
       color: #38aef0;
-      // // position: absolute;
-      // right: 40px;
       }
     }
   }
@@ -112,12 +118,12 @@
         display: flex;
         &--name {
           font-size: 16px;
-          color: #333333;
+          color: $chat-main__font-color;
           margin-right: 8px;
         }
         &--date {
           font-size: 12px;
-          color: #999999;
+          color: $chat-sub__font-color;
         }
       }
       &--bottom {
@@ -129,5 +135,41 @@
   &__message-form {
     height: 90px;
     background-color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+      &--box {
+        display: flex;
+        width: 100%;
+        &--left-content {
+          position: relative;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          &--message{
+            height: 50px;
+            padding-left: 10px;
+            width: calc(100vw - 500px);
+            border-style: none;
+          }
+          label {
+            margin-right: 10px;
+            font-size: 25px;
+            position: absolute;
+            right: 5px;
+            cursor: pointer;
+          }
+        }
+        &--right-content {
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: #38aef0;
+          color: white;
+          cursor: pointer;
+          display:block;
+      }
+    }
   }
 }
