@@ -1,0 +1,36 @@
+.chat-main
+  .chat-main__group-info
+    .chat-main__group-info--left-content
+      %p.chat-main__group-info--left-content--title
+        title
+      %p.chat-main__group-info--left-content--message
+        message
+    .chat-main__group-info--right-content
+      = link_to "#" do
+        Edit
+  .chat-main__message-list
+    .chat-main__message-list--box
+      .chat-main__message-list--box--top
+        %p.chat-main__message-list--box--top--name
+          you
+        %p.chat-main__message-list--box--top--date
+          2020/04/21(tue) 12:42
+      %p.chat-main__message-list--box--bottom
+        おはようございます！
+    .chat-main__message-list--box
+      .chat-main__message-list--box--top
+        %p.chat-main__message-list--box--top--name
+          you
+        %p.chat-main__message-list--box--top--date
+          2020/04/21(tue) 12:42
+      %p.chat-main__message-list--box--bottom
+        おはようございます！
+  .chat-main__message-form
+    %form
+      .chat-main__message-form--box
+        .chat-main__message-form--box--left-content
+          %input{type: "text",placeholder: "type a message",class: "chat-main__message-form--box--left-content--message"}
+          %label{class: "chat-main__message-form--box--left-content--image"}
+            = icon('far', 'image')
+            %input{type: "file", style: "display:none"}
+        %input{type: "submit", value: "Send",class: "chat-main__message-form--box--right-content"}
