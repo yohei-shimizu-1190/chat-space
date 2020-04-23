@@ -13,10 +13,10 @@
 ## messages テーブル
 | Column   | Type    | Options     |
 | -------- | ------- | ----------- |
-| body     | text    | null: false |
+| content  | string    | null: false |
 | image    | string  |             |
-| user_id  | integer | null: false, foreign_key: true|
-| group_id | integer | null: false, foreign_key: true|
+| user_id  | references | null: false, foreign_key: true|
+| group_id | references | null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
