@@ -6,9 +6,9 @@
 | email    | string | null: false |
 | password | string | null: false |
 ### Association
-- has_many :groups, through: :groups_users
+- has_many :groups, through: :group_users
 - has_many :messages
-- has_many :groups_users
+- has_many :group_users
 
 ## messages テーブル
 | Column   | Type    | Options     |
@@ -26,11 +26,11 @@
 | ---------- | ------ | ------------|
 | group_name | string | null: false |
 ### Association
-- has_many :users, through: :groups_users
+- has_many :users, through: :group_users
 - has_many :messages
-- has_many :groups_users
+- has_many :group_users
 
-## groups_users テーブル
+## group_users テーブル
 | Column   | Type    | Options      |
 | -------- | ------- | ------------------------------ |
 | user_id  | integer | null: false, foreign_key: true |
