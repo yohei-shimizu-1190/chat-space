@@ -11,13 +11,10 @@
           = link_to "/users/#{current_user.id}/edit" do
             = icon('fas', 'cog')
   .group-list
-    .group-list__box
-      %p.group-list__box--group-name
-        techcamp
-      %p.group-list__box--message
-        まだメッセージはありません
-    .group-list__box
-      %p.group-list__box--group-name
-        techcamp
-      %p.group-list__box--message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group-list__box
+        =link_to '#' do
+          %p.group-list__box--group-name
+            = group.name
+          %p.group-list__box--message
+            メッセージはまだありません
