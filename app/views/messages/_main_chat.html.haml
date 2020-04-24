@@ -2,27 +2,22 @@
   .group-info
     .group-info__left-content
       %p.group-info__left-content--title
-        title
+        = @group.name
       %p.group-info__left-content--message
-        message
+        グループメンバー出したいけどわからんかった！！
     .group-info__right-content
-      = link_to "#" do
+      = link_to edit_group_path(@group), method: :get do
         Edit
+        
   .message-list
-    .message-list__box
-      .message-list__box--top
-        %p.message-list__box--top--name
-          you
-        %p.message-list__box--top--date
-          2020/04/21(tue) 12:42
-      %p.message-list__box--bottom
-        おはようございます！
+    = render @messages
+
   .form
     = form_for [@group, @message] do |f|
       .form__box
         .form__box--left-content
-          = = f.text_field :content, class: "form__box--left-content--message", placeholder: "type a message"
+          = f.text_field :content, class: "form__box--left-content--message", placeholder: "type a message"
           = f.label :image, class: "form__box--left-content--image" do
             = icon('far', 'image')
-            = = f.file_field :image, class:"form__box--left-content--image--file"
-        = = f.submit 'Send', class: "form__box--right-content"
+            = f.file_field :image, class:"form__box--left-content--image--file"
+        = f.submit 'Send', class: "form__box--right-content"
