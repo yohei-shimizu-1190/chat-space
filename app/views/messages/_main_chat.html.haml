@@ -4,7 +4,10 @@
       %p.group-info__left-content--title
         = @group.name
       %p.group-info__left-content--message
-        グループメンバー出したいけどわからんかった！！
+        Member :
+        - users = @group.users
+        - users.each do |user|
+          = user.name
     .group-info__right-content
       = link_to edit_group_path(@group), method: :get do
         Edit
@@ -21,3 +24,4 @@
             = icon('far', 'image')
             = f.file_field :image, class:"form__box--left-content--image--file"
         = f.submit 'Send', class: "form__box--right-content"
+        
