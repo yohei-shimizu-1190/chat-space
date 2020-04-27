@@ -57,7 +57,6 @@ $(function () {
       contentType: false
     })
       .done(function (message) {
-        console.log(message);
         var html = buildMessage(message);
         $(".message-list").append(html)
         $(".message-list").animate({ scrollTop: $('.message-list')[0].scrollHeight });
