@@ -12,8 +12,12 @@ $(function () {
             </div>
           </div>
           <div class="message-list__box--bottom">
-            ${message.content}
-            <img class="lower-message__image" src="${message.image}">
+            <div class="content">
+              ${message.content}
+              <div class="image">
+                <img class="lower-message__image" src="${message.image}">
+              </div>
+            </div>            
           </div>
         </div>`
       return html;
@@ -29,7 +33,9 @@ $(function () {
             </div>
           </div>
           <div class="message-list__box--bottom">
-            ${message.content}
+            <div class="content">
+              ${message.content}
+            </div>
           </div>
         </div>`
       return html;
@@ -54,11 +60,12 @@ $(function () {
         console.log(message);
         var html = buildMessage(message);
         $(".message-list").append(html)
-        $("#message_content").val('')
+        $(".message-list").animate({ scrollTop: $('.message-list')[0].scrollHeight });
+        $("form")[0].reset();
         $(".form__box--right-content").prop("disabled", false);
       })
       .fail(function () {
-        alert("エラー");
+        alert("メッセージ送信に失敗しました");
       })
   })
 });

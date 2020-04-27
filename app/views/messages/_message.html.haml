@@ -3,8 +3,11 @@
     .message-list__box--top--name
       = message.user.name
     .message-list__box--top--date
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      = message.created_at.strftime("%Y/%m/%d (%a) %H:%M:%S")
   .message-list__box--bottom
-    - if message.content.present?
-      = message.content
-    = image_tag message.image.url, class: "lower-message__image" if message.image.present?
+    .content
+      - if message.content.present?
+        = message.content
+      .image
+        - if message.image.present?
+          = image_tag message.image.url, class: "lower-message__image"
